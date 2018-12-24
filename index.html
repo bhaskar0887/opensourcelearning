@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+            <head>
+		<title>Salesforce Lighnting Out on Heroku</title>
+		<script src="https://productdevorg-dev-ed.lightning.force.com/lightning/lightning.out.js"></script>
+		</head>
+            <body>
+            <div id="lightningLocator">
+			</div>
+            
+            
+            
+            <script>
+    $Lightning.use("c:lightningOutAppGuest",    // name of the Lightning app
+        function() {                  // Callback once framework and app loaded
+            $Lightning.createComponent(
+                "c:lightningOutCmp", // top-level component of your app
+                { },                  // attributes to set on the component when created
+                "lightningLocator",   // the DOM location to insert the component
+                function(cmp) {
+                    // callback when component is created and active on the page
+                    alert('Lightning Out App has loaded!');
+                }
+            );
+        },
+        'https://productdevorg-dev-ed.lightning.force.com'  
+    );
+</script>
+</body>
+
+</html>
